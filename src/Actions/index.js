@@ -25,9 +25,9 @@ export const returnMyApps = () => {
     }
 };
 
-export const addAppToUser = (app) => {
+export const addAppToUser = (appId) => {
    return (dispatch) => {
-    axios.post('http://localhost:3001/addApp?appId=1', {app})
+    axios.post('http://localhost:3001/addApp?appId=1', {appId})
     .then(res => {
       dispatch({type: ADD_APP_TO_USER, payload: res.data})
     })

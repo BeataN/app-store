@@ -19,8 +19,7 @@ class AppList extends Component {
   onHandleButton = () => {
     this.props.appList.filter(app => {
       if(app.checked) {
-        console.log(this.props.addAppToUser(app))
-          return this.props.addAppToUser(app)
+          return this.props.addAppToUser(app.id)
       }
     })
     this.setState({open: !this.state.open})
