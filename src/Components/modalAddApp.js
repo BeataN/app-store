@@ -12,9 +12,7 @@ export default class ModalAddApp extends Component {
           </Modal.Header>
 
           <Modal.Body>
-            {
-              this.props.appList.map(app => <List app={app} kind={'Add'}/>)
-            }
+            <List appList={this.props.appList} kind={'Add'}/>
           </Modal.Body>
 
           <Modal.Footer>

@@ -12,9 +12,7 @@ class MyAppList extends Component {
   render() {
     return (
       <div>
-        {
-          this.props.myappList.map(app => <List app={app} kind={'Remove'}/>)
-        }
+        <List appList={this.props.myappList} kind={'Remove'}/>
       </div>
     )
   }

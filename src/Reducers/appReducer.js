@@ -44,13 +44,14 @@ const appReducer = (state = INIT_STATE, action) => {
       }
 
     case ADD_APP_TO_USER:
-    console.log('action.paylaod', action.paylaod)
-      const appsId = action.paylaod;
-      const index = state.appList.findIndex(app => app.id === appsId)
-      const apps = state.appList[index]
+      // console.log('action.paylaod', action.payload)
+      // const appsId = action.payload;
+      // const index = state.appList.findIndex(app => app.id === appsId)
+      // const apps = state.appList[index]
+      // console.log('action.paylaod apps', apps);
       return {
         ...state,
-        myappList: state.myappList.concat(apps)
+        myappList: state.myappList.concat(action.payload)
       }
   }
   return state;

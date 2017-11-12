@@ -39,7 +39,8 @@ app.get('/myApps', function (req, res) {
 })
 
 app.post('/addApp', function(req, res){
-	const id = req.body.appId;
+  console.log('body', req.body.app.id);
+	const id = req.body.app.id;
 	const newApp = apps.find(a => a.id === id);
   console.log(newApp);
 	if (!newApp){

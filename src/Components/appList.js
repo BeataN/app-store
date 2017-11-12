@@ -10,11 +10,17 @@ class AppList extends Component {
     open: false
   }
 
+  componentDidMount() {
+    if(!this.props.apps) {
+      this.props.returnedAllApps()
+    }
+  }
+
   onHandleButton = () => {
     this.props.appList.filter(app => {
       if(app.checked) {
-        console.log('addAppToUser', this.props.addAppToUser());
-          return this.props.addAppToUser(app.id)
+        console.log(this.props.addAppToUser(app))
+          return this.props.addAppToUser(app)
       }
     })
     this.setState({open: !this.state.open})
@@ -22,12 +28,6 @@ class AppList extends Component {
 
   onhandleClick = () => {
     this.setState({open: !this.state.open})
-  }
-
-  componentDidMount() {
-    if(!this.props.apps) {
-      this.props.returnedAllApps()
-    }
   }
 
   render() {

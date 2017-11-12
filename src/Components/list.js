@@ -10,20 +10,26 @@ class List extends Component {
   }
 
   render() {
-    const {name, desc, checked, id} = this.props.app
+    const {appList, kind} = this.props
     return (
-      <div className="container-fluid">
-          <div className="table-row header">
-            <div className="text">Name</div>
-            <div className="text">Description</div>
-            <div className="text">{this.props.kind}</div>
-          </div>
-          <div className="table-row">
-            <div className="text">{name}</div>
-            <div className="text">{desc}</div>
-            <input className="text" type='checkbox' id={id} checked={checked} onChange={this.onHandleInput}/>
-          </div>
-    </div>
+      <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>{kind}</th>
+          </tr>
+          {
+              appList.map(app => {
+              return (
+                <tr>
+                  <td>{app.name}</td>
+                  <td>{app.desc}</td>
+                  <td><input type='checkbox' id={app.id} checked={app.checked} onChange={this.onHandleInput}/></td>
+                </tr>
+              )
+            })
+          }
+    </table>
     )
   }
 }
