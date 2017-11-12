@@ -41,6 +41,7 @@ app.get('/myApps', function (req, res) {
 app.post('/addApp', function(req, res){
 	const id = req.body.appId;
 	const newApp = apps.find(a => a.id === id);
+  console.log(newApp);
 	if (!newApp){
 	  res.send({message: 'app doesnt exists'});
 	  return;

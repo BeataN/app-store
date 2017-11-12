@@ -10,12 +10,10 @@ class MyAppList extends Component {
   }
 
   render() {
-    console.log('myappList', this.props.myappList);
-    const myappList = [...new Set(this.props.myappList)]
     return (
       <div>
         {
-          myappList.map(app => <List app={app} kind={'Remove'}/>)
+          this.props.myappList.map(app => <List app={app} kind={'Remove'}/>)
         }
       </div>
     )

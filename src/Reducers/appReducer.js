@@ -44,6 +44,7 @@ const appReducer = (state = INIT_STATE, action) => {
       }
 
     case ADD_APP_TO_USER:
+    console.log('action.paylaod', action.paylaod)
       const appsId = action.paylaod;
       const index = state.appList.findIndex(app => app.id === appsId)
       const apps = state.appList[index]
