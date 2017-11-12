@@ -2,14 +2,31 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    padding: 10px 15px;
+}
+th {
+  text-align: center!important;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f3f3f3;
+  background-color: #f9f9f9!important;
+  height: 80px;
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+    border: 1px solid #f3f3f3;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    padding: 10px 15px;
+    height: 80px;
+}
+tr:hover {
+  background-color: #eef3f7;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #f3f3f3;
+}
+tr:nth-child(even):hover {
+    background-color: #eef3f7;
 }
