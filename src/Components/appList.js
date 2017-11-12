@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { returnedAllApps, addAppToUser } from '../Actions'
-import { addApp } from '../Services'
 import ModalAddApp from './modalAddApp'
 import MyAppList from './myappList'
 
@@ -15,7 +14,6 @@ class AppList extends Component {
     this.props.appList.filter(app => {
       if(app.checked) {
           return this.props.addAppToUser(app.id)
-          return this.addApp(app.id)
       }
     })
     this.setState({open: !this.state.open})

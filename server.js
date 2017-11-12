@@ -26,7 +26,7 @@ const apps = [
   {id:4, name:'app4', desc:"then you need to point your frontend to localhost"},
   {id:5, name:'app5', desc:"then you need to point your frontend to localhost"},
   {id:6, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:7, name:'app7', desc:"then you need to point your frontend to localhost"}];
+  {id:7, name:'app7', desc:"then you need to point your frontend to localhost desc then you need to point your frontend to localhost"}];
 
 let myApps = [{id:1, name:'app1', desc:"then you need to point your frontend to localhost"}]
 
@@ -40,7 +40,6 @@ app.get('/myApps', function (req, res) {
 
 app.post('/addApp', function(req, res){
 	const id = req.body.appId;
-  console.log(req);
 	const newApp = apps.find(a => a.id === id);
 	if (!newApp){
 	  res.send({message: 'app doesnt exists'});
