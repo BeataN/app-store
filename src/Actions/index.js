@@ -39,6 +39,7 @@ export const deleteAppToUser = (appId) => {
    return (dispatch) => {
     axios.delete('http://localhost:3001//deleteApp?appId=1', {appId})
     .then(res => {
+      console.log('delete res', res.data);
       dispatch({type: DELETE_APP_TO_USER, payload: res.data})
     })
     .catch((err) => console.log(err))

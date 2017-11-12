@@ -1,4 +1,4 @@
-import { RETURNED_ALL_APPS, RETURNED_MY_APPS, ADD_APP_TO_USER, SELECT_APP_TO_ADD } from '../Actions'
+import { RETURNED_ALL_APPS, RETURNED_MY_APPS, ADD_APP_TO_USER, SELECT_APP_TO_ADD, DELETE_APP_TO_USER } from '../Actions'
 
 const INIT_STATE = {
   appList: [],
@@ -52,6 +52,17 @@ const appReducer = (state = INIT_STATE, action) => {
             }
           })
         }
+
+        case DELETE_APP_TO_USER:
+        console.log('payload in deleteApp', action.payload);
+          return {
+            ...state,
+            myappList: action.payload.map(app => {
+              return {
+                ...app
+              }
+            })
+          }
   }
   return state;
 };

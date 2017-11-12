@@ -30,3 +30,7 @@ tr:nth-child(even) {
 tr:nth-child(even):hover {
     background-color: #eef3f7;
 }
+.modal-body {
+  overflow-y: auto;
+  max-height: 500px;
+}

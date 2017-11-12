@@ -26,7 +26,12 @@ const apps = [
   {id:4, name:'app4', desc:"then you need to point your frontend to localhost"},
   {id:5, name:'app5', desc:"then you need to point your frontend to localhost"},
   {id:6, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:7, name:'app7', desc:"then you need to point your frontend to localhost desc then you need to point your frontend to localhost"}];
+  {id:7, name:'app6', desc:"then you need to point your frontend to localhost"},
+  {id:8, name:'app6', desc:"then you need to point your frontend to localhost"},
+  {id:9, name:'app6', desc:"then you need to point your frontend to localhost"},
+  {id:10, name:'app6', desc:"then you need to point your frontend to localhost"},
+  {id:11, name:'app6', desc:"then you need to point your frontend to localhost"},
+  {id:12, name:'app7', desc:"then you need to point your frontend to localhost desc then you need to point your frontend to localhost"}];
 
 let myApps = [{id:1, name:'app1', desc:"then you need to point your frontend to localhost"}]
 

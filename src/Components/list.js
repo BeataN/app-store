@@ -18,17 +18,19 @@ class List extends Component {
             <th>Description</th>
             <th>{kind}</th>
           </tr>
-          {
-              appList.map(app => {
-              return (
-                <tr>
-                  <td>{app.name}</td>
-                  <td>{app.desc}</td>
-                  <td><input type='checkbox' id={app.id} checked={app.checked} onChange={this.onHandleInput}/></td>
-                </tr>
-              )
-            })
-          }
+           <tbody>
+              {
+                  appList.map(app => {
+                  return (
+                    <tr key={app.id}>
+                      <td>{app.name}</td>
+                      <td>{app.desc}</td>
+                      <td><input type='checkbox' id={app.id} checked={app.checked} onChange={this.onHandleInput}/></td>
+                    </tr>
+                  )
+                })
+              }
+        </tbody>
     </table>
     )
   }
