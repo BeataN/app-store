@@ -1,12 +1,18 @@
-import { RETURNED_ALL_APPS, RETURNED_MY_APPS, ADD_APP_TO_USER, SELECT_APP_TO_ADD, DELETE_APP_TO_USER } from '../Actions'
+import { RETURNED_ALL_APPS, RETURNED_MY_APPS, ADD_APP_TO_USER, SELECT_APP_TO_ADD, DELETE_APP_TO_USER, ERROR } from '../Actions'
 
 const INIT_STATE = {
   appList: [],
-  myappList: []
+  myappList: [],
+  error: undefined
 };
 
 const appReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
+    case ERROR:
+      return {
+        error: action.error
+      }
+
     case RETURNED_ALL_APPS:
       return {
         ...state,
@@ -24,7 +30,8 @@ const appReducer = (state = INIT_STATE, action) => {
         myappList: action.payload.map(app => {
           return {
             ...app,
-            checked:true
+            checked:false,
+            selectedForRemoval: false
           }
         })
       }
@@ -38,7 +45,14 @@ const appReducer = (state = INIT_STATE, action) => {
 					if (app.id !== appId) return app;
 					return {
 						...app,
-						checked: !app.checked,
+						checked: !app.checked
+					};
+				}),
+        myappList: state.myappList.map(app => {
+					if (app.id !== appId) return app;
+					return {
+						...app,
+						selectedForRemoval: !app.selectedForRemoval
 					};
 				}),
       }

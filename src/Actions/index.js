@@ -4,14 +4,15 @@ export const RETURNED_MY_APPS = "RETURNED_MY_APPS"
 export const ADD_APP_TO_USER = "ADD_APP_TO_USER"
 export const DELETE_APP_TO_USER = "DELETE_APP_TO_USER"
 export const SELECT_APP_TO_ADD = "SELECT_APP_TO_ADD"
+export const ERROR = "ERROR"
 
 export const returnedAllApps = () => {
-   return (dispatch) => {
+   return dispatch => {
     axios.get('http://localhost:3001/apps?appId=1')
     .then(res => {
       dispatch({type: RETURNED_ALL_APPS, payload: res.data})
     })
-    .catch((err) => console.log(err))
+    .catch(error => dispatch({type: ERROR, error}));
     }
 };
 
@@ -37,7 +38,8 @@ export const addAppToUser = (appId) => {
 
 export const deleteAppToUser = (appId) => {
    return (dispatch) => {
-    axios.delete('http://localhost:3001//deleteApp?appId=1', {appId})
+    console.log('after delete',{appId})
+    axios.post('http://localhost:3001/deleteApp?appId=1', {appId})
     .then(res => {
       console.log('delete res', res.data);
       dispatch({type: DELETE_APP_TO_USER, payload: res.data})

@@ -10,7 +10,7 @@ class List extends Component {
   }
 
   render() {
-    const {appList, kind} = this.props
+    const {appList, kind, property} = this.props
     return (
       <table>
           <tr>
@@ -21,11 +21,13 @@ class List extends Component {
            <tbody>
               {
                   appList.map(app => {
+
+                    console.log('property', property, app[property])
                   return (
                     <tr key={app.id}>
                       <td>{app.name}</td>
                       <td>{app.desc}</td>
-                      <td><input type='checkbox' id={app.id} checked={app.checked} onChange={this.onHandleInput}/></td>
+                      <td><input type='checkbox' id={app.id} checked={app[property]} onChange={this.onHandleInput}/></td>
                     </tr>
                   )
                 })

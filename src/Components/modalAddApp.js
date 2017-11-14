@@ -12,7 +12,8 @@ export default class ModalAddApp extends Component {
           </Modal.Header>
 
           <Modal.Body>
-            <List appList={this.props.appList} kind={'Add'}/>
+            <List appList={this.props.appList}
+               kind={'Add'} property={'checked'}/>
           </Modal.Body>
 
           <Modal.Footer>

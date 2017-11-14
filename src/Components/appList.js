@@ -17,11 +17,9 @@ class AppList extends Component {
   }
 
   onHandleButton = () => {
-    this.props.appList.filter(app => {
-      if(app.checked) {
-          return this.props.addAppToUser(app.id)
-      }
-    })
+    this.props.appList
+    .filter(app =>  app.checked)
+    .forEach(app => { console.log('adding app', app.id); this.props.addAppToUser(app.id)})
     this.setState({open: !this.state.open})
   }
 
@@ -30,13 +28,16 @@ class AppList extends Component {
   }
 
   render() {
+    if (this.props.error){
+      return <div>{this.props.error.message}</div>
+    }
     return (
       <div>
         <MyAppList />
         <button onClick={this.onhandleClick}>Add</button>
           {
             this.state.open ? <ModalAddApp
-            appList={this.props.appList}
+            appList={this.props.appList.filter(app => !this.props.myappList.find(ma => app.id === ma.id))}
             onHandleButton={this.onHandleButton}
             open={this.state.open}
             onClick={this.onhandleClick}/> : null
@@ -49,7 +50,9 @@ class AppList extends Component {
 const mapStateToProps = state => {
   console.log(state.AppReducer);
   return {
-    appList: state.AppReducer.appList
+    appList: state.AppReducer.appList,
+    myappList: state.AppReducer.myappList,
+    error: state.AppReducer.error
   }
 }
 

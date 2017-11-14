@@ -62,9 +62,8 @@ app.post('/addApp', function(req, res){
 })
 
 app.post('/deleteApp', function(req, res){
-	const id = new Number(req.body.appId);
-	myApps = myApps.filter(a => a.id !== id)
-    res.send(myApps);
+	myApps = myApps.filter(a => a.id !== req.body.appId)
+  res.send(myApps);
 })
 
 
