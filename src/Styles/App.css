@@ -1,3 +1,12 @@
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -33,4 +42,83 @@ tr:nth-child(even):hover {
 .modal-body {
   overflow-y: auto;
   max-height: 500px;
+  padding: 0;
+}
+
+.wrapper__top  {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+
+@media (min-width: 768px) {
+  .wrapper {
+      display: flex;
+      justify-content: space-between;
+  }
+}
+
+.wrapper__body {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.wrapper__box {
+  padding: 15px;
+  background: #f3f3f3;
+  border-radius: 3px;
+  margin: 0 0 10px 0;
+  width: 100%;
+  border: solid 1px transparent;
+  transition: width .5s, background .2s, border .2s;
+}
+
+.wrapper__box:hover,
+.wrapper__box--active {
+  background: #f6f6f6;
+  border: solid 1px #005b96;
+}
+
+@media (min-width: 768px) {
+  .wrapper__box {
+      width: 50%;
+      flex-basis: calc(50% - 5px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper__box {
+      width: 33%;
+      flex-basis: calc(33% - 5px);
+  }
+}
+
+.wrapper__head {
+  margin: 0 0 0 20px;
+}
+
+.wrapper__title {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+}
+
+.wrapper__button-cta {
+  background: #f3f3f3;
+  border: solid 1px #333;
+  padding: 10px;
+}
+
+img {
+  width: 100px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+      width: 75vw;
+      margin: 30px auto;
+  }
 }

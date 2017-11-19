@@ -7,8 +7,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -20,20 +20,20 @@ const verifyAppIdIsSet = (req, res, next) => {
 app.use(verifyAppIdIsSet)
 
 const apps = [
-  {id:1, name:'app1', desc:"then you need to point your frontend to localhost then you need to point your frontend to localhost"},
-  {id:2, name:'app2', desc:"then you need to point your frontend to localhost"},
-  {id:3, name:'app3', desc:"then you need to point your frontend to localhost"},
-  {id:4, name:'app4', desc:"then you need to point your frontend to localhost"},
-  {id:5, name:'app5', desc:"then you need to point your frontend to localhost"},
-  {id:6, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:7, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:8, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:9, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:10, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:11, name:'app6', desc:"then you need to point your frontend to localhost"},
-  {id:12, name:'app7', desc:"then you need to point your frontend to localhost desc then you need to point your frontend to localhost"}];
+  {id:1, name:'app1', desc:'then you need to point your frontend to localhost then you need to point your frontend to localhost', owner:'Agata Krzywda', logo:'http://via.placeholder.com/150x100'},
+  {id:2, name:'app2', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:3, name:'app3', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:4, name:'app4', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:5, name:'app5', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:6, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:7, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:8, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:9, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:10, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:11, name:'app6', desc:'then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100' },
+  {id:12, name:'app7', desc:'then you need to point your frontend to localhost desc then you need to point your frontend to localhost', owner:'Agata Krzywda', logo: 'http://via.placeholder.com/150x100'}];
 
-let myApps = [{id:1, name:'app1', desc:"then you need to point your frontend to localhost"}]
+let myApps = [{id:1, name:'app1', desc:'then you need to point your frontend to localhost'}]
 
 app.get('/apps', function (req, res) {
   res.send(apps)

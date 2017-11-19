@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Modal, Button} from 'react-bootstrap'
-import List from './list'
+import AppStore from './appStore'
 
 export default class ModalAddApp extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class ModalAddApp extends Component {
           </Modal.Header>
 
           <Modal.Body>
-            <List appList={this.props.appList}
+            <AppStore appList={this.props.appList}
                kind={'Add'} property={'checked'}/>
           </Modal.Body>
 

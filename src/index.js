@@ -1,3 +1,4 @@
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
@@ -5,7 +6,6 @@ import App from './Components';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import reducers from './Reducers'
 import thunk from 'redux-thunk';
 
